@@ -14,12 +14,12 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras.preprocessing.image import img_to_array, load_img
 from keras.callbacks import TensorBoard
 
-train_dir = '../data/train'
-test_dir = '../data/validation'
+train_dir = './data/train'
+test_dir = './data/test'
 
-train_dogs = ['../data/train/{}'.format(i) for i in os.listdir(train_dir) if 'dog' in i] # get dog images
-train_cats = ['../data/train/{}'.format(i) for i in os.listdir(train_dir) if 'cat' in i] # get cat images
-test_imgs = ['../data/validation/{}'.format(i) for i in os.listdir(test_dir)] # get test images
+train_dogs = ['./data/train/{}'.format(i) for i in os.listdir(train_dir) if 'dog' in i] # get dog images
+train_cats = ['./data/train/{}'.format(i) for i in os.listdir(train_dir) if 'cat' in i] # get cat images
+test_imgs = ['./data/test/{}'.format(i) for i in os.listdir(test_dir)] # get test images
 
 train_imgs = train_dogs[:2000] + train_cats[:2000]  # slice the dataset and use 2000 in each class
 random.shuffle(train_imgs)  # shuffle it randomly
