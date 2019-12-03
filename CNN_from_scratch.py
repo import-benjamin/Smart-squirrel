@@ -171,6 +171,7 @@ test_datagen = ImageDataGenerator(rescale=1./255)
 i = 0
 text_labels = []
 plt.figure(figsize=(30,20))
+columns = 150
 for batch in test_datagen.flow(x, batch_size=1):
     pred = model.predict(batch)
     if pred > 0.5: text_labels.append('dog')

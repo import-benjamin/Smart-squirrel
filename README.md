@@ -13,3 +13,10 @@ __Used libairies :__
 - `Pandas`
 - `Matplotlib`
 - `gc`
+
+1. Start by downloading dataset available on kaggle and extract it like below :
+   - `data/train/`
+   - `data/test/`
+1. Create a virtual environment using `pipenv` with `pipenv install`
+1. Execute `CNN_from_scratch.py` with the command `pipenv run python CNN_from_scratch.py`
+
