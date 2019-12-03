@@ -6,8 +6,9 @@ name = "pypi"
 [dev-packages]
 
 [packages]
-keras = "*"
-opencv-python = "*"
+keras = "==2.2.5"
+tensorflow = "==1.7.0"
+opencv-python = "3.4.2.16"
 sklearn = "*"
 pandas = "*"
 matplotlib = "*"
