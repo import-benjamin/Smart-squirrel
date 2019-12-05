@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import gc
 import pandas as pd
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 #To see our directory
 import os
@@ -13,6 +14,8 @@ from keras import optimizers
 from keras.preprocessing.image import ImageDataGenerator
 from keras.preprocessing.image import img_to_array, load_img
 from keras.callbacks import TensorBoard
+
+mpl.rcParams['toolbar'] = 'None'
 
 train_dir = './data/train'
 test_dir = './data/test'
@@ -151,9 +154,9 @@ val_loss = history.history['val_loss']
 epochs = range(1, len(acc) + 1)
 
 #Train and validation accuracy
-plt.plot(epochs, acc, 'b', label='Training accurarcy')
-plt.plot(epochs, val_acc, 'r', label='Validation accurarcy')
-plt.title('Training and Validation accurarcy')
+plt.plot(epochs, acc, 'b', label='Training accuracy')
+plt.plot(epochs, val_acc, 'r', label='Validation accuracy')
+plt.title('Training and Validation accuracy')
 plt.legend()
 
 plt.figure()
@@ -171,7 +174,7 @@ test_datagen = ImageDataGenerator(rescale=1./255)
 i = 0
 text_labels = []
 plt.figure(figsize=(30,20))
-columns = 150
+columns = 5
 for batch in test_datagen.flow(x, batch_size=1):
     pred = model.predict(batch)
     if pred > 0.5: text_labels.append('dog')
